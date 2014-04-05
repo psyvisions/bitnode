@@ -14,6 +14,12 @@ exports.list = function(req, res){
             console.log(body);
         }
     });
+
+    request('https://btc-e.com/api/2/btc_usd/trades', function(error, response, body) {
+        if(!error && response.statusCode == 200) {
+            console.log(body);
+        }
+    });
     //console.log(bitStampOrders);
     res.send({ orders: orders });
     /* res.send({
