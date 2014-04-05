@@ -11,4 +11,15 @@ viewModel.orders.push({
     exchange: 'btc-e.com'
 });
 
+viewModel.apiCall = function(){ 
+    var ajaxCallResults = $.ajax({
+        url: '/orders',
+        success: function(data, status, jqXHR){
+            viewModel.orders(data.orders);
+        }
+    });
+};
+viewModel.apiCallIntervalDelay = 5000;
+viewModel.apiCallIntervalId = window.setInterval(viewModel.apiCall, viewModel.apiCallIntervalDelay); 
+
 ko.applyBindings(viewModel);
