@@ -11,9 +11,18 @@ block content
         th Quantity
         th Price
         th Exchange
-    tbody#recentOrders
+    tbody#recentOrders(data-bind="template: { name: 'order-template', foreach: orders }")
       tr
         td N/A
         td N/A
         td N/A
         td N/A
+
+  script#order-template
+    tr
+      td(data-bind="text: time")
+      td(data-bind="text: quantity")
+      td(data-bind="text: price")
+      td(data-bind="text: exchange")
+
+  script(src='javascripts/index.js')
