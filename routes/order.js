@@ -1,4 +1,5 @@
 var request = require('request');
+var _und = require('underscore');
 
 var orders = [];
 var bitstampOrders = [];
