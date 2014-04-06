@@ -5,10 +5,10 @@ var viewModel = {
 viewModel.orders = ko.observableArray();
 
 viewModel.orders.push({
-    time: '11:02 am',
-    quantity: '4',
-    price: '1.01',
-    exchange: 'btc-e.com'
+    time: 'Loading...',
+    quantity: '',
+    price: '',
+    exchange: ''
 });
 
 viewModel.apiCall = function(){ 
