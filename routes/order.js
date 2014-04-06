@@ -37,7 +37,7 @@ exports.list = function(req, res){
             });
 
             var combinedOrders = _und.union(mappedBitStampOrders, mappedBtceOrders);
-            var sortedCombinedOrders = _und.sortBy(combinedOrders, function(order){ return -1 * order.date; });
+            var sortedCombinedOrders = _und.sortBy(combinedOrders, function(order){ return -1 * order.time; });
             results.orders = _und.first(sortedCombinedOrders, 10);
             res.send(results);
         });
