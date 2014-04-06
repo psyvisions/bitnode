@@ -1,22 +1,23 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  div.container-fluid
+    h1= title
+    p Welcome to #{title}
 
-  table.table
-    thead
-      tr
-        th Time
-        th Quantity
-        th Price
-        th Exchange
-    tbody#recentOrders(data-bind="template: { name: 'order-template', foreach: orders() }")
-      tr
-        td N/A
-        td N/A
-        td N/A
-        td N/A
+    table.table
+      thead
+        tr
+          th Time
+          th Quantity
+          th Price
+          th Exchange
+      tbody#recentOrders(data-bind="template: { name: 'order-template', foreach: orders() }")
+        tr
+          td N/A
+          td N/A
+          td N/A
+          td N/A
 
   script#order-template
     tr
